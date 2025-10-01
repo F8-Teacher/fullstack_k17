@@ -1,0 +1,60 @@
+<form action="tiep-nhan.htm" style="width:30%;background: lightgray;margin: 0 auto;">
+    <fieldset>
+        <legend>Thông Tin Cá Nhân</legend>
+        <label for="">Họ và Tên</label>
+        <br>
+        <input type="text" name="hoVaTen" id="hoVaTen">
+        <br><br>
+        <label>Hòm Thư</label><br>
+        <input type="email">
+        <br><br>
+        <label>Mật Khẩu</label><br>
+        <input type="password">
+        <br><br>
+        <label>Xác nhận Mật Khẩu</label><br>
+        <input type="password">
+        <br><br>
+        <label>Giới Tính:</label>
+        <input type="radio" name="gioiTinh"/><span>Nam</span>
+        <input type="radio" name="gioiTinh"/><span>Nữ</span>
+        <input type="radio" name="gioiTinh"/><span>Khác</span>
+        <!--single option: đơn lựa chọn-->
+        <br><br>
+        <label>Sở Thích:</label>
+        <input type="checkbox" name="soThich"/><span>Thể Thao</span>
+        <input type="checkbox" name="soThich"/><span>Âm Nhạc</span>
+        <input type="checkbox" name="soThich"/><span>Du Lịch</span>
+        <!--single option: đơn lựa chọn-->
+        <br><br>
+        <label>Ngày Sinh</label><br>
+        <input type="date"/>
+        <br><br>
+        <label for="">Quốc Gia</label>
+        <select name="quocGia" id="quocGia">
+            <option value="vn">Việt Nam</option>
+            <option value="us">Mỹ</option>
+            <option value="uk">Anh</option>
+            <option value="fr">Pháp</option>
+            <option value="jp">Nhật Bản</option>
+        </select>
+        <br><br>
+        <label>Địa chỉ</label><br>
+        <textarea name="diaChi" id="diaChi" 
+            cols="30" 
+            rows="5"></textarea>
+        <br><br>
+        <div style="text-align: center;">
+            <button type="submit">Gửi</button>
+            <button type="reset">Hủy</button>
+        </div>
+
+    </fieldset>
+
+    <!-- <fieldset>
+        <legend>Thông Tin Thuế</legend>
+    </fieldset>
+
+    <fieldset>
+        <legend>Lựa Chọn Dịch Vụ</legend>
+    </fieldset> -->
+</form>

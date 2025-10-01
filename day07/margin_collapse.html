@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Margin Collapse</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .box {
+        background: #f0f0f0;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      .box1 {
+        margin-bottom: 50px;
+      }
+      .box2 {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box box1">Box 1: margin-bottom: 50px</div>
+    <div class="box box2">Box 2: margin-top: 30px</div>
+    <p>
+      The vertical space between boxes is 50px (larger margin), demonstrating
+      margin collapse.
+    </p>
+  </body>
+</html>

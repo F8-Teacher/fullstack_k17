@@ -1,0 +1,32 @@
+.box {
+  border: 1px solid red;
+}
+.box h1 {
+  /* transition-property: padding-left, color;
+  transition-duration: 2s;
+  transition-timing-function: ease; */
+  /* transition-delay: 1s; */
+  transition: 2s 1s linear;
+  transition-property: padding-left, color;
+}
+.box:hover h1 {
+  padding-left: 200px;
+  color: red;
+}
+
+/*
+transition: Thiết lập quá trình chuyển đổi của giá trị các thuộc tính css
+Lưu ý: Chỉ áp dụng với các thuộc tính có giá trị là số (Màu cũng là số)
+
+- transition-property: Lựa chọn thuộc tính muốn áp dụng hiệu ứng
+- transition-duration: Thời gian chuyển đổi (s, ms)
+- transition-delay: Thời gian trễ trước khi bắt đầu
+- transition-timing-function: Tốc độ chuyển đổi
++ ease: Mặc định: Chậm - Nhanh - Chậm 
++ ease-in: Chậm - nhanh
++ ease-out: Nhanh - chậm
++ ease-in-out: Chậm - Nhanh - Chậm
++ linear: Tốc độ đều
+- transition: Kết hợp tất cả các thuộc tính trên
+transition: property duration delay timing-function;
+*/
