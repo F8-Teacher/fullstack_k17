@@ -1,0 +1,51 @@
+.box {
+  width: 400px;
+  height: 400px;
+  border: 1px solid red;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box span {
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: green;
+  transition: all 0.4s ease;
+  transform-origin: 0 0;
+}
+.box:hover span {
+  /* transform: rotateY(180deg); */
+  /* transform: scale(1, 0.5); */
+  /* transform: skew(0, -30deg); */
+  /* transform: translate(100%); */
+  rotate: 45deg;
+
+  /* scale: 1 2; */
+}
+/*
+Thuộc tính transform: Thay đổi hình dạng ban đầu của thẻ html
+Cú pháp: transform: giatri
+- rotate(goc): Xoay phần tử theo trục Z
+- rotateX(goc): Xoay theo trục X
+- rotateY(goc): Xoay theo trục Y
+
+- scale(x,y): Phóng to / thu nhỏ theo trục X, Y
+- scaleX(value): Phóng to / thu nhỏ theo trục X
+- scaleY(value): Phóng to / thu nhỏ theo trục Y
+
+- skew(x,y): Nghiêng theo trục x, y
+- skewX(value): Nghiêng theo trục X
+- skewY(value): Nghiêng theo trục Y
+
+- translate(x,y): Dịch chuyển phần tử theo trục x, y
+
+Các thuộc tính bổ sung
+
+- rotate: value --> Tương tự transform: rotate(value)
+- scale: x y --> Tương tự transform: scale(x,y)
+- translate: x y --> Tương tự transform: translate(x,y)
+
+transform-origin --> Chọn vị trí của trục (Mặc định ở trung tâm)
+*/

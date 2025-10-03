@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  background: #333;
+  color: #fff;
+  padding: 15px;
+  z-index: 1100;
+  translate: -100%;
+  transition: translate 0.3s;
+}
+.menu .menu-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: #00000084;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+#menu-toggle:checked ~ .menu {
+  translate: 0;
+}
+#menu-toggle:checked ~ .overlay {
+  opacity: 1;
+  visibility: visible;
+}

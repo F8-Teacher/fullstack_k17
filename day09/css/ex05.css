@@ -1,0 +1,56 @@
+/*
+Responsive Web Design: Thiết kế web thích ứng với tất cả thiết bị (Dựa theo kích thước màn hình)
+Nếu muốn dựa theo thiết bị --> Dùng Adaptive
+
+Breakpoint: Điểm tọa độ mà tại đó giao diện sẽ bị thay đổi
+- 1400px
+- 1200px
+- 992px --> *
+- 768px --> *
+- 576px
+
+Media Queries: Cú pháp css cho phép áp dụng breakpoint để triển khai Responsive
+@media sreen and (max-width: 1399.98px) {
+    Selector {
+        Thuoctinh: giatri;
+    }
+}
+@media sreen and (max-width: 1199.98px) {
+    Selector {
+        Thuoctinh: giatri;
+    }
+}
+@media sreen and (max-width: 991.98px) {
+    Selector {
+        Thuoctinh: giatri;
+    }
+}
+@media sreen and (max-width: 767.98px) {
+    Selector {
+        Thuoctinh: giatri;
+    }
+}
+@media sreen and (max-width: 576.98px) {
+    Selector {
+        Thuoctinh: giatri;
+    }
+}
+
+*/
+
+body {
+  color: red;
+}
+
+@media screen and (max-width: 991.98px) {
+  body {
+    background: green;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  body {
+    background: blueviolet;
+    color: #fff;
+  }
+}
