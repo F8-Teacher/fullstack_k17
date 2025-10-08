@@ -1,0 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.wave {
+  width: 300px;
+  height: 200px;
+  /* border: 1px solid red; */
+  margin: 30px auto;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-end;
+}
+.wave span {
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-color: red;
+  border-radius: 3px;
+  animation: wave 1s infinite ease-in-out;
+}
+.wave span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.wave span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.wave span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+@keyframes wave {
+  50% {
+    height: 80px;
+  }
+}
