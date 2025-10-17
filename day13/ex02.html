@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <h1 class="custom-color">F8 - Học lập trình</h1>
+    <div class="h-screen bg-gray-100 py-10">
+      <div class="text-center">
+        <img
+          src="https://cdn-icons-png.freepik.com/512/219/219964.png"
+          class="w-[100px] mx-auto"
+          alt=""
+        />
+        <h1 class="text-4xl font-bold mb-3">Sign in to your account</h1>
+        <p>
+          <a href="#" class="text-blue-500 text-lg">Or create a new account</a>
+        </p>
+      </div>
+      <form
+        class="bg-[#fff] w-[500px] mx-auto mt-7 border border-gray-200 p-5 rounded-lg shadow-sm"
+      >
+        <div class="mb-3">
+          <label class="block mb-2">Email address</label>
+          <input
+            type="email"
+            placeholder="user@example.com"
+            class="outline-none border border-gray-300 w-full py-3 px-5 rounded-md"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="block mb-2">Password</label>
+          <input
+            type="password"
+            class="outline-none border border-gray-300 w-full py-3 px-5 rounded-md"
+          />
+        </div>
+        <div class="flex justify-between">
+          <label>
+            <input type="checkbox" />
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="text-blue-500 text-lg">Forgot your password?</a>
+        </div>
+        <button
+          class="w-full py-3 text-white bg-blue-600 rounded-md mt-3 cursor-pointer"
+        >
+          Sign In
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

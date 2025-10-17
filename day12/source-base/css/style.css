@@ -1,0 +1,27 @@
+:root {
+  --primary-color: red;
+  --secondary-color: blue;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+}
+html {
+}
+body {
+}
+img {
+}
+a {
+}
+ul,
+ol {
+}
+table {
+}
+h1 {
+  color: var(--primary-color);
+}
