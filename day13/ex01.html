@@ -9,6 +9,16 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
+    <style type="text/tailwindcss">
+      @theme {
+        --breakpoint-tablet: 992px;
+        --primary-color: blueviolet;
+        --color-primary: red;
+      }
+      .container {
+        @apply max-w-[1200px] mx-auto  px-5 xl:px-0;
+      }
+    </style>
   </head>
   <body>
     <!-- <h1
@@ -26,17 +36,27 @@
     </h2> -->
 
     <section class="py-5">
-      <div class="max-w-[1200px] mx-auto">
-        <h2 class="text-center text-4xl mb-5">Danh sách sản phẩm</h2>
-        <div class="flex justify-between gap-5">
+      <div class="container">
+        <h2
+          class="text-center text-4xl mb-5 text-[var(--primary-color)] tablet:text-red-600"
+        >
+          Danh sách sản phẩm
+        </h2>
+        <p class="text-primary">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+          voluptates, consectetur eos corporis non quis voluptas! Et, ipsum
+          nobis? Molestiae suscipit eum temporibus officia sint non corporis
+          illo sed exercitationem.
+        </p>
+        <div class="flex flex-wrap gap-5">
           <div
-            class="border border-[#ddd] rounded-[10px] hover:shadow-sm group"
+            class="border border-[#ddd] rounded-[10px] hover:shadow-sm group w-full sm:w-[calc(100%/2-10px)] lg:w-[calc(100%/3-15px)]"
           >
             <a href="#" class="relative">
               <img
                 src="https://fastly.picsum.photos/id/586/536/354.jpg?hmac=P7VlXEEnfksFtsPAdPrNzb5pPU0QKTGK8d2z_aFuH80"
                 alt=""
-                class="rounded-t-[10px]"
+                class="rounded-t-[10px] w-full"
               />
               <span
                 class="absolute top-1 right-1 z-10 bg-[#ff000063] text-white inline-block p-2 rounded-md"
@@ -58,17 +78,22 @@
               >
             </div>
           </div>
-          <div class="border border-[#ddd] rounded-[10px] hover:shadow-sm">
-            <a href="#" class="block relative">
+          <div
+            class="border border-[#ddd] rounded-[10px] hover:shadow-sm group w-full sm:w-[calc(100%/2-10px)] lg:w-[calc(100%/3-15px)]"
+          >
+            <a href="#" class="relative">
               <img
                 src="https://fastly.picsum.photos/id/586/536/354.jpg?hmac=P7VlXEEnfksFtsPAdPrNzb5pPU0QKTGK8d2z_aFuH80"
                 alt=""
-                class="rounded-t-[10px]"
+                class="rounded-t-[10px] w-full"
               />
               <span
                 class="absolute top-1 right-1 z-10 bg-[#ff000063] text-white inline-block p-2 rounded-md"
                 >-30%</span
               >
+              <i
+                class="fa-regular fa-heart absolute right-1 bottom-1 z-10 text-white text-lg opacity-0 group-hover:opacity-100"
+              ></i>
             </a>
             <div class="p-[10px]">
               <h3 class="text-2xl font-semibold hover:text-blue-500">
@@ -82,17 +107,22 @@
               >
             </div>
           </div>
-          <div class="border border-[#ddd] rounded-[10px] hover:shadow-sm">
-            <a href="#" class="block relative">
+          <div
+            class="border border-[#ddd] rounded-[10px] hover:shadow-sm group w-full sm:w-[calc(100%/2-10px)] lg:w-[calc(100%/3-15px)]"
+          >
+            <a href="#" class="relative">
               <img
                 src="https://fastly.picsum.photos/id/586/536/354.jpg?hmac=P7VlXEEnfksFtsPAdPrNzb5pPU0QKTGK8d2z_aFuH80"
                 alt=""
-                class="rounded-t-[10px]"
+                class="rounded-t-[10px] w-full"
               />
               <span
                 class="absolute top-1 right-1 z-10 bg-[#ff000063] text-white inline-block p-2 rounded-md"
                 >-30%</span
               >
+              <i
+                class="fa-regular fa-heart absolute right-1 bottom-1 z-10 text-white text-lg opacity-0 group-hover:opacity-100"
+              ></i>
             </a>
             <div class="p-[10px]">
               <h3 class="text-2xl font-semibold hover:text-blue-500">
