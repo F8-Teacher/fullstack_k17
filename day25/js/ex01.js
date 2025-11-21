@@ -12,18 +12,23 @@ const boxStartY = box.offsetTop;
 const boxEndY = box.offsetTop + box.clientHeight;
 const offsetLeftBtn = btn.offsetLeft;
 const offsetTopBtn = btn.offsetTop;
+const boxBorderWidth = window
+  .getComputedStyle(box)
+  .borderWidth.replace("px", "");
+
 const inital = {
   x: 0,
   y: 0,
 };
+
 const handleMouseup = (e) => {
   document.removeEventListener("mousemove", handleDrag);
   box.classList.remove("drag");
 
   if (e.clientX >= boxStartX && e.clientY >= boxStartY) {
     Object.assign(btn.style, {
-      left: `${boxEndX - btn.offsetWidth}px`,
-      top: `${boxEndY - btn.offsetHeight}px`,
+      left: `${boxEndX - btn.offsetWidth + +boxBorderWidth}px`,
+      top: `${boxEndY - btn.offsetHeight + +boxBorderWidth}px`,
     });
   } else {
     Object.assign(btn.style, {
