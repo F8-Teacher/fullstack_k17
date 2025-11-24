@@ -4,6 +4,7 @@
 // - Khi user mousedown --> Thêm mousemove
 // - Khi user mouseup --> Bỏ mousemove
 
+let isDrag = false;
 const btn = document.querySelector("button");
 const box = document.querySelector(".box");
 const boxStartX = box.offsetLeft;
@@ -22,19 +23,22 @@ const inital = {
 };
 
 const handleMouseup = (e) => {
-  document.removeEventListener("mousemove", handleDrag);
-  box.classList.remove("drag");
+  if (isDrag) {
+    document.removeEventListener("mousemove", handleDrag);
+    box.classList.remove("drag");
 
-  if (e.clientX >= boxStartX && e.clientY >= boxStartY) {
-    Object.assign(btn.style, {
-      left: `${boxEndX - btn.offsetWidth + +boxBorderWidth}px`,
-      top: `${boxEndY - btn.offsetHeight + +boxBorderWidth}px`,
-    });
-  } else {
-    Object.assign(btn.style, {
-      top: offsetTopBtn + "px",
-      left: offsetLeftBtn + "px",
-    });
+    if (e.clientX >= boxStartX && e.clientY >= boxStartY) {
+      Object.assign(btn.style, {
+        left: `${boxEndX - btn.offsetWidth + +boxBorderWidth}px`,
+        top: `${boxEndY - btn.offsetHeight + +boxBorderWidth}px`,
+      });
+    } else {
+      Object.assign(btn.style, {
+        top: offsetTopBtn + "px",
+        left: offsetLeftBtn + "px",
+      });
+    }
+    isDrag = false;
   }
 };
 
@@ -48,6 +52,7 @@ const handleMousedown = (e) => {
 };
 
 const handleDrag = (e) => {
+  isDrag = true;
   const css = {
     left: e.clientX - inital.x + "px",
     top: e.clientY - inital.y + "px",
