@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      .btn-active {
+        @apply bg-yellow-400;
+      }
+    </style>
   </head>
   <body>
     <main class="max-w-[80%] mx-auto py-3">
@@ -12,67 +17,29 @@
       <input
         type="search"
         placeholder="Search..."
-        class="border border-gray-300 w-full py-2 px-3 outline-none my-3"
+        class="js-search border border-gray-300 w-full py-2 px-3 outline-none my-3"
       />
       <button
         class="cursor-pointer border border-gray-300 py-2 px-5 hover:bg-green-600"
       >
         Thêm mới
       </button>
-      <div class="flex gap-3 mt-3">
-        <button class="cursor-pointer border border-gray-300 py-2 px-5">
+      <div class="js-sort flex gap-3 mt-3">
+        <button
+          data-sort="desc"
+          class="btn-active cursor-pointer border border-gray-300 py-2 px-5"
+        >
           Mới nhất
         </button>
-        <button class="cursor-pointer border border-gray-300 py-2 px-5">
+        <button
+          data-sort="asc"
+          class="cursor-pointer border border-gray-300 py-2 px-5"
+        >
           Cũ nhất
         </button>
       </div>
-      <div class="js-post-list">
-        <div class="my-3 border border-gray-300 p-5">
-          <h2 class="text-2xl font-medium mb-3">
-            The majestic waterfall thundered down the mountainside
-          </h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolor
-            voluptatum ipsam pariatur. Ratione neque provident dolorum minima
-            nihil! Laudantium eius, sit deserunt quasi ab nisi. Quasi sint
-            nostrum animi!
-          </p>
-          <div class="flex justify-between mt-3">
-            <button
-              class="cursor-pointer border border-gray-300 py-2 px-5 hover:bg-green-600 rounded-full"
-            >
-              Xem chi tiết
-            </button>
-            <div class="flex gap-2">
-              <span class="cursor-pointer">Sửa</span>
-              <span class="text-red-600 cursor-pointer">Xóa</span>
-            </div>
-          </div>
-        </div>
-        <div class="my-3 border border-gray-300 p-5">
-          <h2 class="text-2xl font-medium mb-3">
-            The majestic waterfall thundered down the mountainside
-          </h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolor
-            voluptatum ipsam pariatur. Ratione neque provident dolorum minima
-            nihil! Laudantium eius, sit deserunt quasi ab nisi. Quasi sint
-            nostrum animi!
-          </p>
-          <div class="flex justify-between mt-3">
-            <button
-              class="cursor-pointer border border-gray-300 py-2 px-5 hover:bg-green-600 rounded-full"
-            >
-              Xem chi tiết
-            </button>
-            <div class="flex gap-2">
-              <span class="cursor-pointer">Sửa</span>
-              <span class="text-red-600 cursor-pointer">Xóa</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="js-loading"></div>
+      <div class="js-post-list"></div>
     </main>
     <script src="js/ex02.js"></script>
   </body>
