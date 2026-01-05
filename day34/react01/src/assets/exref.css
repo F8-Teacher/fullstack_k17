@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  height: 100vh;
+  .sidebar {
+    width: 200px;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    .resize {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 4px;
+      height: 100%;
+      background: #ccc;
+      opacity: 0;
+      cursor: ew-resize;
+    }
+    &:hover {
+      .resize {
+        opacity: 1;
+      }
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+  .content {
+    flex: 1;
+    padding: 10px;
+  }
+}
