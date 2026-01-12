@@ -1,4 +1,5 @@
 import { useSearchParams } from "react-router-dom";
+import { useAuth } from "../stores/authStore";
 
 export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -18,6 +19,7 @@ export default function Products() {
       q: value,
     });
   };
+  const todoList = useAuth((state) => state.todoList);
   return (
     <div>
       <h1>Products</h1>
@@ -29,6 +31,11 @@ export default function Products() {
       <input type="text" placeholder="Từ khóa..." onChange={handleSearch} />
       <p>Keyword: {searchParams.get("q")}</p>
       <p>Status: {searchParams.get("status")}</p>
+
+      <h2>Todo List</h2>
+      {todoList.map((todo) => (
+        <h3 key={todo.id}>{todo.title}</h3>
+      ))}
     </div>
   );
 }
