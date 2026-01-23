@@ -25,5 +25,42 @@
       "email": "hoangan.web@gmail.com",
       "id": 6
     }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Post 1",
+      "body": "Content 1"
+    },
+    {
+      "id": 2,
+      "title": "Post 2",
+      "body": "Content 2"
+    },
+    {
+      "id": 3,
+      "title": "Post 3",
+      "body": "Content 3"
+    },
+    {
+      "title": "Post 4",
+      "body": "Body 4",
+      "id": 4
+    },
+    {
+      "title": "Post 5",
+      "body": "Body 5",
+      "id": 5
+    },
+    {
+      "title": "Post 6",
+      "body": "Content 6",
+      "id": 6
+    },
+    {
+      "title": "Post 7",
+      "body": "Content 7",
+      "id": 7
+    }
   ]
 }
