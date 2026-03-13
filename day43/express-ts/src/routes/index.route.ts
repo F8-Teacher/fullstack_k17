@@ -1,0 +1,11 @@
+import express from "express";
+import { homeController } from "../controllers/home.controller";
+import { authMiddleware } from "../middlewares/auth.middleware";
+import { userController } from "../controllers/user.controller";
+import { validate } from "../middlewares/validate.middleware";
+import { createUserSchema } from "../validators/createUser.validate";
+const router = express.Router();
+router.use(authMiddleware);
+router.get("/", homeController.index);
+router.post("/users", validate(createUserSchema), userController.create);
+export default router;
