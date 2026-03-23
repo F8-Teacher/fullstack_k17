@@ -1,0 +1,5 @@
+-- Mô tả nghiệp vụ: Xây dựng database của hệ thống quản lý đơn hàng
+-- + Quản ly sản phẩm
+-- + Quản lý đơn hàng
+-- + Quản lý trạng thái của đơn hàng
+-- + Quản lý khách hàng

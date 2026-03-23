@@ -1,0 +1,15 @@
+name: fullstack_k17_db
+services:
+  postgres_db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: f8
+      POSTGRES_PASSWORD: 123456
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+volumes:
+  postgres_db:
