@@ -1,0 +1,11 @@
+import express from "express";
+import { homeController } from "../controllers/home.controller";
+import { authMiddleware } from "../middlewares/auth.middleware";
+import { userController } from "../controllers/user.controller";
+const router = express.Router();
+router.use(authMiddleware);
+router.get("/", homeController.index);
+router.get("/users", userController.findAll);
+router.get("/users/:id", userController.find);
+router.post("/users", userController.create);
+export default router;
