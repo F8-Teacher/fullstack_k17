@@ -37,17 +37,51 @@ export const userService = {
         return acc;
       }, {} as SelectType);
     const options = {
-      where: filters,
+      where: {
+        ...filters,
+        // posts: {
+        //   // none: {}, //có ít nhất 1 posts
+        //   // some: {
+        //   //   title: {
+        //   //     contains: "t 1",
+        //   //   },
+        //   // },
+        // },
+      },
       take: limit,
       skip: offset,
+      orderBy: {
+        id: "desc",
+      },
+      // include: {
+      //   // phone: true,
+      //   // posts: true,
+      // },
     } as UserFindManyArgs;
     if (Object.keys(fields).length) {
       options.select = fields;
     }
+    options.select = {
+      id: true,
+      name: true,
+      email: true,
+      status: true,
+      createdAt: true,
+      updatedAt: true,
+      _count: {
+        select: {
+          posts: true,
+        },
+      },
+      phone: true,
+      posts: true,
+    };
     return Promise.all([
       prisma.user.findMany(options),
       prisma.user.count({
-        where: filters,
+        where: {
+          ...fields,
+        },
       }),
     ]);
   },
@@ -56,33 +90,74 @@ export const userService = {
       where: {
         id,
       },
+      include: {
+        posts: true,
+      },
     });
     if (!user) {
       throw new Error("User not found");
     }
     return user;
   },
-  create(userData: { name: string; email: string; status: boolean }) {
+  create({
+    phone,
+    ...userData
+  }: {
+    name: string;
+    email: string;
+    status: boolean;
+    phone: string;
+  }) {
     return prisma.user.create({
       data: {
         ...userData,
         createdAt: new Date(),
         updatedAt: new Date(),
+        phone: {
+          create: {
+            phone,
+          },
+        },
       },
     });
   },
   update(
-    userData: { name: string; email: string; status: boolean },
+    {
+      phone,
+      ...userData
+    }: { name: string; email: string; status: boolean; phone: string },
     id: number,
   ) {
     return prisma.user.update({
       where: { id },
-      data: userData,
+      data: {
+        ...userData,
+        phone: {
+          upsert: {
+            where: {
+              userId: id,
+            },
+            create: {
+              phone,
+            },
+            update: {
+              phone,
+            },
+          },
+        },
+      },
     });
   },
   delete(id: number) {
-    return prisma.user.delete({
-      where: { id },
-    });
+    return prisma.$transaction([
+      prisma.phone.delete({
+        where: {
+          userId: id,
+        },
+      }),
+      prisma.user.delete({
+        where: { id },
+      }),
+    ]);
   },
 };

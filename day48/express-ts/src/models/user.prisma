@@ -3,6 +3,8 @@ model User {
     email     String    @unique
     name      String
     status    Boolean
+    phone     Phone?
+    posts     Post[]
     createdAt DateTime? @db.Timestamp()
     updatedAt DateTime? @db.Timestamp()
 

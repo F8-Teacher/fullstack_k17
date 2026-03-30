@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { userService } from "../services/user.service";
 import { UserQuery } from "../types/user.type";
+import { postService } from "../services/post.service";
 
 export const userController = {
   findAll: async (req: Request, res: Response) => {
@@ -50,6 +51,16 @@ export const userController = {
       success: true,
       message: "Delete user success",
       data: user,
+    });
+  },
+  createPost: async (req: Request, res: Response) => {
+    const userId = req.params.id;
+    const body = req.body;
+    const post = await postService.create(+userId!, body);
+    res.status(201).json({
+      success: true,
+      message: "Create post by user success",
+      data: post,
     });
   },
 };
