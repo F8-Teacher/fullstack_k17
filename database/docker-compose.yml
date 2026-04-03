@@ -10,6 +10,9 @@ services:
       - postgres_db:/var/lib/postgresql/data
     ports:
       - 5432:5432
-
+  redis:
+    image: redis
+    ports:
+      - 6380:6379
 volumes:
   postgres_db:
