@@ -5,6 +5,7 @@ import { userController } from "../controllers/user.controller";
 import { authController } from "../controllers/auth.controller";
 import { validate } from "../middlewares/validate.middleware";
 import { registerSchema } from "../validators/auth.validate";
+import { productController } from "../controllers/product.controller";
 const router = express.Router();
 // router.use(authMiddleware);
 router.get("/", homeController.index);
@@ -23,5 +24,14 @@ router.post(
 router.post("/auth/login", authController.login);
 router.get("/auth/profile", authMiddleware, authController.profile);
 router.delete("/auth/logout", authMiddleware, authController.logout);
+router.post("/auth/refresh-token", authController.refreshToken);
 
+router.get("/products", productController.index);
+router.post("/products", productController.create);
+router.get("/products/:id", productController.find);
+router.put("/products/:id", productController.update);
+router.delete("/products/:id", productController.delete);
+
+router.get("/auth/google", authController.googleRedirect);
+router.get("/auth/google/callback", authController.googleCallback);
 export default router;
